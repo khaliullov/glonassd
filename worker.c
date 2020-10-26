@@ -88,7 +88,7 @@ unsigned int test_forward(ST_WORKER *config, char *imei, ST_FORWARD_ATTR *forwar
 
 		// search imei of the terminal in forwarded terminals list
 		for(i = 0; i < stForwarders.listcount; ++i) {
-			if( !strcmp(imei, stForwarders.terminals[i].imei) ) {	// terminal exists in list
+			if( !strcmp(imei, stForwarders.terminals[i].imei) || !strcmp("default", stForwarders.terminals[i].imei) ) {	// terminal exists in list
 
 				// search needded forwarder by name & get his protocol
 				for(j = 0; j < stForwarders.count; ++j) {
